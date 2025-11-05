@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Sustain - Sustainable Marketplace for Fashion Gurus</title>
+    <meta name="description" content="Eco Sustain is the premier sustainable marketplace for fashion gurus. Discover eco-friendly fashion, sustainable brands, and conscious style choices.">
+    <meta name="keywords" content="sustainable fashion, eco fashion, green marketplace, sustainable brands, ethical fashion, Eco Sustain">
+    <meta name="author" content="Eco Sustain">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Custom Properties for consistent theming */
+        :root {
+            --primary-color: #2d5a3d;
+            --secondary-color: #4a7c59;
+            --accent-color: #7fb069;
+            --light-green: #b8d4a0;
+            --cream: #f9f7f4;
+            --dark-text: #2c2c2c;
+            --light-text: #666;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(45, 90, 61, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+            --max-width: 1200px;
+        }
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Header and Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(249, 247, 244, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(45, 90, 61, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--cream) 0%, #e8f5e8 100%);
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 40%;
+            height: 200%;
+            background: linear-gradient(45deg, var(--light-green), transparent);
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .hero-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(45, 90, 61, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-graphic {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--accent-color), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-graphic::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-graphic i {
+            font-size: 8rem;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--light-green));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(45, 90, 61, 0.15);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-color), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--cream) 0%, #f0f8f0 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .about-description {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(45, 90, 61, 0.1);
+            transition: var(--transition);
+        }
+
+        .stat:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(45, 90, 61, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .about-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-graphic {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: fadeInRight 0.8s ease-out;
+            transform: rotate(5deg);
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px) rotate(5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(5deg);
+            }
+        }
+
+        .about-graphic i {
+            font-size: 6rem;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            padding: 2rem 0;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-description {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--cream);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: var(--light-green);
+            transform: translateX(5px);
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid transparent;
+            border-radius: var(--border-radius);
+            background: var(--white);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(127, 176, 105, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-error {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-success {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p {
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-animate.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 1rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-graphic {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero-graphic i {
+                font-size: 6rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .about-graphic {
+                width: 250px;
+                height: 250px;
+            }
+
+            .about-graphic i {
+                font-size: 4rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <a href="#" class="logo" aria-label="Eco Sustain Homepage">
+                <i class="fas fa-leaf" aria-hidden="true"></i>
+                Eco Sustain
+            </a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#features" class="nav-link" role="menuitem">Features</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero" role="banner">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Eco Sustain</h1>
+                    <h2 class="hero-subtitle">Sustainable Marketplace for Fashion Gurus</h2>
+                    <p class="hero-description">
+                        Discover a revolutionary platform where sustainability meets style. Connect with eco-conscious brands, 
+                        find sustainable fashion alternatives, and build a wardrobe that reflects your values without compromising on style.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#features" class="btn btn-primary">
+                            <i class="fas fa-rocket" aria-hidden="true"></i>
+                            Explore Platform
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-graphic">
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features scroll-animate" role="region" aria-labelledby="features-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="features-title" class="section-title">Why Choose Eco Sustain</h2>
+                    <p class="section-subtitle">
+                        Experience the future of sustainable fashion with our comprehensive platform designed for conscious consumers and brands.
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">100% Sustainable</h3>
+                        <p class="feature-description">
+                            Every brand on our platform meets strict sustainability criteria, ensuring your fashion choices support environmental protection and ethical practices.
+                        </p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Curated Community</h3>
+                        <p class="feature-description">
+                            Join a passionate community of fashion enthusiasts who share your commitment to sustainability and style. Connect, share, and inspire each other.
+                        </p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Smart Discovery</h3>
+                        <p class="feature-description">
+                            Our intelligent matching system helps you discover sustainable brands and products that align with your style preferences and values.
+                        </p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Verified Brands</h3>
+                        <p class="feature-description">
+                            All brands undergo thorough verification to ensure authentic sustainable practices. Shop with confidence knowing you're making a positive impact.
+                        </p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Mobile Experience</h3>
+                        <p class="feature-description">
+                            Access your sustainable fashion marketplace anywhere with our responsive design and mobile-optimized experience.
+                        </p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Impact Tracking</h3>
+                        <p class="feature-description">
+                            Track your positive environmental impact with detailed analytics showing how your sustainable choices contribute to a better planet.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about scroll-animate" role="region" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 id="about-title" class="about-title">Revolutionizing Sustainable Fashion</h2>
+                        <p class="about-description">
+                            Eco Sustain was born from the vision of making sustainable fashion accessible, stylish, and mainstream. 
+                            We believe that conscious consumption shouldn't mean compromising on style or quality. Our platform 
+                            connects fashion-forward individuals with brands that share their values, creating a community dedicated 
+                            to positive change in the fashion industry.
+                        </p>
+                        <p class="about-description">
+                            Through rigorous brand verification, intelligent curation, and community-driven recommendations, 
+                            we're building the future of fashion retail - one where sustainability and style go hand in hand.
+                        </p>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Verified Sustainable Brands</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">50K+</span>
+                                <span class="stat-label">Fashion Conscious Users</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1M+</span>
+                                <span class="stat-label">Sustainable Products</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">85%</span>
+                                <span class="stat-label">Carbon Footprint Reduction</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="about-graphic">
+                            <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact scroll-animate" role="region" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="contact-title" class="section-title">Get in Touch</h2>
+                    <p class="section-subtitle">
+                        Ready to join the sustainable fashion revolution? Contact us to learn more about Eco Sustain.
+                    </p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 class="contact-title">Let's Start a Conversation</h3>
+                        <p class="contact-description">
+                            Whether you're a fashion enthusiast looking to discover sustainable brands or a brand interested 
+                            in joining our marketplace, we'd love to hear from you. Our team is here to help you make a positive impact.
+                        </p>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>We'll respond within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>Quick and helpful support</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
+                            <div>
+                                <h4>Partnership</h4>
+                                <p>Collaborate for sustainability</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-success" id="formSuccess" role="alert">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            Thank you! Your message has been sent successfully. We'll get back to you soon.
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required aria-describedby="nameError">
+                            <div class="form-error" id="nameError" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required aria-describedby="emailError">
+                            <div class="form-error" id="emailError" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest" class="form-label">I'm interested in *</label>
+                            <select id="interest" name="interest" class="form-select" required aria-describedby="interestError">
+                                <option value="">Select your interest</option>
+                                <option value="user">Joining as a User</option>
+                                <option value="brand">Joining as a Brand</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                            <div class="form-error" id="interestError" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your interest in sustainable fashion..." required aria-describedby="messageError"></textarea>
+                            <div class="form-error" id="messageError" role="alert"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span class="btn-text">Send Message</span>
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Eco Sustain</h3>
+                <p>
+                    Leading the sustainable fashion revolution by connecting conscious consumers with verified eco-friendly brands. 
+                    Together, we're building a more sustainable future for fashion.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Follow us on Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Follow us on Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Follow us on Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Connect on LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Platform</h3>
+                <ul class="footer-links">
+                    <li><a href="#contact">Join as User</a></li>
+                    <li><a href="#contact">Join as Brand</a></li>
+                    <li><a href="#contact">Partnerships</a></li>
+                    <li><a href="#contact">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-use">Terms of Use</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Eco Sustain. All rights reserved. | Building a sustainable future for fashion.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.contains('active');
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+            
+            // Toggle icon
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.className = isOpen ? 'fas fa-bars' : 'fas fa-times';
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.className = 'fas fa-bars';
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(249, 247, 244, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(45, 90, 61, 0.15)';
+            } else {
+                header.style.background = 'rgba(249, 247, 244, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(45, 90, 61, 0.1)';
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-animate elements
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact form validation and submission
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formSuccess = document.getElementById('formSuccess');
+
+        // Form validation functions
+        function validateName(name) {
+            return name.trim().length >= 2 && /^[a-zA-Z\s]+$/.test(name.trim());
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email.trim());
+        }
+
+        function validateMessage(message) {
+            return message.trim().length >= 10;
+        }
+
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorDiv = document.getElementById(fieldId + 'Error');
+            field.style.borderColor = '#e74c3c';
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function clearError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorDiv = document.getElementById(fieldId + 'Error');
+            field.style.borderColor = 'transparent';
+            errorDiv.style.display = 'none';
+        }
+
+        function clearAllErrors() {
+            ['name', 'email', 'interest', 'message'].forEach(fieldId => {
+                clearError(fieldId);
+            });
+        }
+
+        // Real-time validation
+        document.getElementById('name').addEventListener('blur', function() {
+            if (!validateName(this.value)) {
+                showError('name', 'Please enter a valid name (at least 2 characters, letters only)');
+            } else {
+                clearError('name');
+            }
+        });
+
+        document.getElementById('email').addEventListener('blur', function() {
+            if (!validateEmail(this.value)) {
+                showError('email', 'Please enter a valid email address');
+            } else {
+                clearError('email');
+            }
+        });
+
+        document.getElementById('message').addEventListener('blur', function() {
+            if (!validateMessage(this.value)) {
+                showError('message', 'Please enter a message with at least 10 characters');
+            } else {
+                clearError('message');
+            }
+        });
+
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            clearAllErrors();
+            formSuccess.style.display = 'none';
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const interest = formData.get('interest');
+            const message = formData.get('message');
+            
+            let isValid = true;
+
+            // Validate all fields
+            if (!validateName(name)) {
+                showError('name', 'Please enter a valid name (at least 2 characters, letters only)');
+                isValid = false;
+            }
+
+            if (!validateEmail(email)) {
+                showError('email', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            if (!interest) {
+                showError('interest', 'Please select your area of interest');
+                isValid = false;
+            }
+
+            if (!validateMessage(message)) {
+                showError('message', 'Please enter a message with at least 10 characters');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Show loading state
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnIcon = submitBtn.querySelector('i');
+                const originalText = btnText.textContent;
+                
+                btnText.textContent = 'Sending...';
+                btnIcon.className = 'loading';
+                submitBtn.disabled = true;
+
+                // Simulate form submission
+                setTimeout(() => {
+                    // Reset button
+                    btnText.textContent = originalText;
+                    btnIcon.className = 'fas fa-paper-plane';
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    formSuccess.style.display = 'block';
+                    contactForm.reset();
+                    
+                    // Scroll to success message
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 2000);
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.form-error[style*="block"]');
+                if (firstError) {
+                    firstError.closest('.form-group').scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }
+            }
+        });
+
+        // Stats counter animation
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(progress * target);
+                
+                element.textContent = current.toLocaleString() + (element.textContent.includes('%') ? '%' : element.textContent.includes('+') ? '+' : '');
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+
+        // Animate stats when they come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const text = statNumber.textContent;
+                    const number = parseInt(text.replace(/\D/g, ''));
+                    
+                    animateCounter(statNumber, number);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < hero.offsetHeight) {
+                const speed = scrolled * 0.5;
+                hero.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Add loading class to body when page loads
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Handle reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('*').forEach(el => {
+                el.style.animationDuration = '0.01ms';
+                el.style.animationIterationCount = '1';
+                el.style.transitionDuration = '0.01ms';
+            });
+        }
+
+        // Keyboard navigation improvements
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.className = 'fas fa-bars';
+                mobileMenuToggle.focus();
+            }
+        });
+
+        // Focus management for mobile menu
+        const focusableElements = navMenu.querySelectorAll('a, button, input, textarea, select');
+        const firstFocusableElement = focusableElements[0];
+        const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+        navMenu.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                if (e.shiftKey && document.activeElement === firstFocusableElement) {
+                    e.preventDefault();
+                    lastFocusableElement.focus();
+                } else if (!e.shiftKey && document.activeElement === lastFocusableElement) {
+                    e.preventDefault();
+                    firstFocusableElement.focus();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
